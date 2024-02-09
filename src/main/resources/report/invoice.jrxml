@@ -97,12 +97,54 @@
 	<field name="name1" class="java.lang.String"/>
 	<title>
 		<band height="216" splitType="Stretch">
+			<image hAlign="Center">
+				<reportElement x="0" y="0" width="80" height="70" uuid="94883631-a913-43e2-b182-ab8d77d0181e"/>
+				<imageExpression><![CDATA["report/logo.png"]]></imageExpression>
+			</image>
+
+			<staticText>
+				<reportElement x="95" y="0" width="255" height="25" uuid="e622555d-198b-4ccd-a4a1-c59c53304058">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QVAN FARDO EXPRESS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="55" width="205" height="15" uuid="b8cc42fd-b569-497d-834d-7e854040ad18"/>
+				<text><![CDATA[(502)6192769]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="25" width="205" height="15" uuid="c226e44d-3bb5-4145-b0b3-903bf1d79fde"/>
+				<text><![CDATA[3030 S 3rd St, Louisville, KY 40208]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="40" width="205" height="15" uuid="b96f7183-44f8-43ad-ba60-43d8fbf50b6e"/>
+				<text><![CDATA[cubanfardo@gmail.com]]></text>
+			</staticText>
+
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="420" y="10" width="147" height="15" uuid="bb10dbe1-0a4f-4722-9953-c163b63cf979"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+
+			<textField>
+				<reportElement x="430" y="25" width="100" height="35" uuid="079d9335-161c-40e1-8496-6386f8574e57"/> <!-- style="Column header"  -->
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{shipping}.tracking()]]></textFieldExpression>
+			</textField>
+
 			<line>
 				<reportElement x="0" y="80" width="556" height="1" uuid="806ce5df-1219-4876-ae0c-ca7405b1f246">
 					<property name="local_mesure_unitheight" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 			</line>
+
 			<staticText>
 				<reportElement x="17" y="90" width="84" height="25" uuid="57aed2b1-4f4e-40a3-a6ad-54dae8dd4c5a">
 					<property name="local_mesure_unitheight" value="pixel"/>
@@ -128,7 +170,7 @@
 				<text><![CDATA[TELEF:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="302" y="90" width="84" height="16" uuid="139ebe8d-25b0-411e-986c-270015400874">
+				<reportElement x="300" y="90" width="84" height="16" uuid="139ebe8d-25b0-411e-986c-270015400874">
 					<property name="local_mesure_unitheight" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -138,56 +180,32 @@
 				<text><![CDATA[RECIBE:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="302" y="106" width="42" height="15" uuid="edbd74ac-0cbd-44c9-8a8e-ccf745191172"/>
+				<reportElement x="300" y="109" width="50" height="15" uuid="edbd74ac-0cbd-44c9-8a8e-ccf745191172"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[NOMBRE:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="302" y="125" width="42" height="15" uuid="2d2f365d-7b12-4a8f-990d-ff528a2660bc"/>
+				<reportElement x="313" y="130" width="40" height="15" uuid="2d2f365d-7b12-4a8f-990d-ff528a2660bc"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[TELEF:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="302" y="144" width="55" height="15" uuid="b62092ec-9053-4f27-b387-9b25d2909a68"/>
+				<reportElement x="300" y="149" width="60" height="15" uuid="b62092ec-9053-4f27-b387-9b25d2909a68"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[DIRECCION:]]></text>
+				<text><![CDATA[DIRECCN:]]></text>
 			</staticText>
-			<textField pattern="dd MMMMM yyyy">
-				<reportElement x="402" y="10" width="147" height="20" uuid="bb10dbe1-0a4f-4722-9953-c163b63cf979"/>
-				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
-			</textField>
-			<image hAlign="Center">
-				<reportElement x="0" y="0" width="80" height="70" uuid="94883631-a913-43e2-b182-ab8d77d0181e"/>
-				<imageExpression><![CDATA["report/logo.png"]]></imageExpression>
-			</image>
-			<staticText>
-				<reportElement x="95" y="0" width="255" height="25" uuid="e622555d-198b-4ccd-a4a1-c59c53304058">
-					<property name="local_mesure_unitheight" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement>
-					<font size="16" isBold="true"/>
-				</textElement>
-				<text><![CDATA[QVAN FARDO EXPRESS]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="95" y="55" width="205" height="15" uuid="b8cc42fd-b569-497d-834d-7e854040ad18"/>
-				<text><![CDATA[(502)6192769]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="95" y="25" width="205" height="15" uuid="c226e44d-3bb5-4145-b0b3-903bf1d79fde"/>
-				<text><![CDATA[3030 S 3rd St, Louisville, KY 40208]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="95" y="40" width="205" height="15" uuid="b96f7183-44f8-43ad-ba60-43d8fbf50b6e"/>
-				<text><![CDATA[cubanfardo@gmail.com]]></text>
-			</staticText>
+
+
+
+
+
+
 			<textField>
 				<reportElement x="67" y="109" width="197" height="15" isPrintInFirstWholeBand="true" uuid="544e258c-e6f1-463c-a52d-937e6c6bc412"/>
 				<textFieldExpression><![CDATA[$P{shipping}.sender().name()]]></textFieldExpression>
@@ -197,31 +215,28 @@
 				<textFieldExpression><![CDATA[$P{shipping}.sender().phone()]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="352" y="106" width="204" height="15" uuid="9701345a-86fc-48c5-b4b9-2b259a44d918"/>
+				<reportElement x="352" y="109" width="204" height="15" uuid="9701345a-86fc-48c5-b4b9-2b259a44d918"/>
 				<textFieldExpression><![CDATA[$P{shipping}.receives().name()]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="352" y="124" width="204" height="16" uuid="445ee377-9c9a-4e31-88ca-b46403dd08d4"/>
+				<reportElement x="352" y="130" width="204" height="16" uuid="445ee377-9c9a-4e31-88ca-b46403dd08d4"/>
 				<textFieldExpression><![CDATA[$P{shipping}.receives().phone()]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="352" y="144" width="203" height="66" uuid="d51f4a2a-b442-48a9-a155-2e0ed336d3ff"/>
+				<reportElement x="352" y="149" width="203" height="66" uuid="d51f4a2a-b442-48a9-a155-2e0ed336d3ff"/>
 				<textFieldExpression><![CDATA[$P{shipping}.receives().address()]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="430" y="40" width="100" height="30" uuid="079d9335-161c-40e1-8496-6386f8574e57"/> <!-- style="Column header"  -->
-				<textElement>
-					<font size="16" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{shipping}.tracking()]]></textFieldExpression>
-			</textField>
+
+
+
+
 			<staticText>
 				<reportElement x="197" y="195" width="198" height="19" uuid="cd2d7234-3966-42e9-9316-2cd89a7734c5">
 					<property name="local_mesure_unitheight" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
-					<font size="14" isBold="true"/>
+					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[DESCRIPCION PRODUCTOS]]></text>
 			</staticText>
@@ -255,48 +270,50 @@
 		</band>
 	</detail>
 	<lastPageFooter>
-		<band height="150">
+		<band height="80" splitType="Stretch">
 			<!--
-                        <staticText>
-                            <reportElement positionType="Float" mode="Opaque" x="0" y="140" width="400" height="17" backcolor="#E6E8E9" uuid="36aa233d-4305-48e6-974a-1bbf89bb3c8f"/>
-                            <textElement textAlignment="Center" verticalAlignment="Middle">
-                                <font fontName="Serif" size="9" isItalic="true"/>
-                            </textElement>
-                            <text><![CDATA[THANKYOU FOR YOUR BUSINESS]]></text>
-                        </staticText>
+					<staticText>
+						<reportElement positionType="Float" mode="Opaque" x="0" y="140" width="100" height="17" backcolor="#E6E8E9" uuid="36aa233d-4305-48e6-974a-1bbf89bb3c8f"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="Serif" size="9" isItalic="true"/>
+						</textElement>
+						<text><![CDATA[THANKYOU FOR YOUR BUSINESS]]></text>
+					</staticText>
+            -->
 
+					<staticText>
+						<reportElement x="459" y="50" width="39" height="15" uuid="2f14db21-240f-4a26-a052-b4ee075e22cb"/>
+						<textElement>
+							<font isBold="true"/>
+						</textElement>
+						<text><![CDATA[Peso: lb]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="500" y="50" width="55" height="15" isPrintInFirstWholeBand="true" uuid="09015b5c-39fa-495f-8401-115883df9b29"/>
+						<textFieldExpression><![CDATA[$P{shipping}.weight()]]></textFieldExpression>
+					</textField>
 
-                        <staticText>
-                            <reportElement x="461" y="50" width="33" height="15" uuid="2f14db21-240f-4a26-a052-b4ee075e22cb"/>
-                            <textElement>
-                                <font isBold="true"/>
-                            </textElement>
-                            <text><![CDATA[Peso:]]></text>
-                        </staticText>
-                        <textField>
-                            <reportElement x="499" y="50" width="57" height="15" isPrintInFirstWholeBand="true" uuid="09015b5c-39fa-495f-8401-115883df9b29"/>
-                            <textFieldExpression><![CDATA[$P{shipping}.weight()]]></textFieldExpression>
-                        </textField>
+					<staticText>
+						<reportElement x="435" y="65" width="65" height="15" uuid="852856f1-87b9-4334-81e4-ee089207d9c8"/>
+						<textElement>
+							<font isBold="true"/>
+						</textElement>
+						<text><![CDATA[Valor Total: $]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="500" y="65" width="55" height="15" uuid="083e0f68-cbdd-48cc-9e4b-a091296c23a4"/>
+						<textFieldExpression><![CDATA[$P{shipping}.amount()]]></textFieldExpression>
+					</textField>
+			<!--
+					<staticText>
+						<reportElement x="489" y="50" width="15" height="15" uuid="5b2d39a6-9d47-41c7-bcf2-20d655a4fdf2"/>
+						<textElement>
+							<font isBold="true"/>
+						</textElement>
+						<text><![CDATA[lb]]></text>
+					</staticText>
+			-->
 
-                        <staticText>
-                            <reportElement x="436" y="65" width="67" height="15" uuid="852856f1-87b9-4334-81e4-ee089207d9c8"/>
-                            <textElement>
-                                <font isBold="true"/>
-                            </textElement>
-                            <text><![CDATA[Valor Total: $]]></text>
-                        </staticText>
-                        <textField>
-                            <reportElement x="499" y="65" width="57" height="15" uuid="083e0f68-cbdd-48cc-9e4b-a091296c23a4"/>
-                            <textFieldExpression><![CDATA[$P{shipping}.amount()]]></textFieldExpression>
-                        </textField>
-                        <staticText>
-                            <reportElement x="489" y="50" width="15" height="15" uuid="5b2d39a6-9d47-41c7-bcf2-20d655a4fdf2"/>
-                            <textElement>
-                                <font isBold="true"/>
-                            </textElement>
-                            <text><![CDATA[lb]]></text>
-                        </staticText>
-                        -->
 		</band>
 	</lastPageFooter>
 </jasperReport>

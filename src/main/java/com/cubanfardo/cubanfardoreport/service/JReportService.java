@@ -31,7 +31,7 @@ public class JReportService {
     }
 
     private List<Article> splitContent(List<Article> articles) {
-        if(articles.size() <= 33) {
+        if(articles.size() <= 35) {
             return articles;
         }
 
