@@ -1,4 +1,6 @@
 package com.cubanfardo.cubanfardoreport.model;
 
-public record Shipping(String tracking, String province, Sender sender, Receives receives, Article article) {
+import java.util.List;
+
+public record Shipping(String tracking, String province, Integer amount, Double weight, Sender sender, Receives receives, List<Article> articles) {
 }

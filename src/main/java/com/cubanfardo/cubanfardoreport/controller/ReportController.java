@@ -26,10 +26,10 @@ public class ReportController {
     public void createPdf(@RequestBody Shipping shipping, HttpServletResponse response) throws JRException, IOException {
         String fileName = shipping.tracking() + "-" + shipping.province() + ".pdf";
 
-       response.setContentType("application/pdf");
-       String headerKey = "Content-Disposition";
-       String headerValue = "attachment; filename="+fileName;
-       response.setHeader(headerKey, headerValue);
+        response.setContentType("application/pdf");
+        String headerKey = "Content-Disposition";
+        String headerValue = "attachment; filename="+fileName;
+        response.setHeader(headerKey, headerValue);
 
         jReportService.exportJasperReport(shipping, response);
     }
