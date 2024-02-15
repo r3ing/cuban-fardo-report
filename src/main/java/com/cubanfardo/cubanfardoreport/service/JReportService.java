@@ -11,6 +11,7 @@ import org.springframework.util.ResourceUtils;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class JReportService {
@@ -30,27 +31,4 @@ public class JReportService {
         JasperExportManager.exportReportToPdfStream(jasperPrint, response.getOutputStream());
     }
 
-    private List<Article> splitContent(List<Article> articles) {
-        if(articles.size() <= 35) {
-            return articles;
-        }
-
-        for (int i = 0; i < articles.size(); i++) {
-
-        }
-
-        List<Article> content = articles.subList(33, articles.size());
-
-        for (int i = 0; i < content.size(); i++) {
-            articles.get(i).setTotal1(content.get(i).getTotal());
-            articles.get(i).setName1(content.get(i).getName());
-            if(i == 32) {
-                break;
-            }
-        }
-
-        return articles;
-
-        //return articles.subList(0, articles.size() - content.size());
-    }
 }
