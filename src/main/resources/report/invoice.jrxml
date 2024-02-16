@@ -248,7 +248,7 @@
 		<band height="8"/>
 	</columnHeader>
 	<detail >
-		<band height="15" splitType="Stretch" isSplitAllowed="true" >
+		<band height="15" splitType="Stretch">
 			<textField >
 				<reportElement x="0" y="0" width="20" height="15"/>
 				<textElement/>
