@@ -79,24 +79,14 @@
 			<rightPen lineWidth="0.5" lineColor="#000000"/>
 		</box>
 	</style>
-	<!--
-	<subDataset name="Dataset1" uuid="731eb868-f8af-4636-9f68-0ff81a574e3d">
-		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
-		<queryString>
-			<![CDATA[]]>
-		</queryString>
-		<field name="total" class="java.lang.Integer"/>
-		<field name="name" class="java.lang.String"/>
-	</subDataset>
-	-->
+
 	<parameter name="shipping" class="com.cubanfardo.cubanfardoreport.model.Shipping"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
 	<field name="total" class="java.lang.Integer"/>
 	<field name="name" class="java.lang.String"/>
-	<field name="total1" class="java.lang.Integer"/>
-	<field name="name1" class="java.lang.String"/>
+
 	<title>
 		<band height="216" splitType="Stretch">
 			<image hAlign="Center">
@@ -203,11 +193,6 @@
 				<text><![CDATA[DIRECCN:]]></text>
 			</staticText>
 
-
-
-
-
-
 			<textField>
 				<reportElement x="67" y="109" width="197" height="15" isPrintInFirstWholeBand="true" uuid="544e258c-e6f1-463c-a52d-937e6c6bc412"/>
 				<textFieldExpression><![CDATA[$P{shipping}.sender().name()]]></textFieldExpression>
@@ -228,10 +213,6 @@
 				<reportElement x="352" y="149" width="203" height="66" uuid="d51f4a2a-b442-48a9-a155-2e0ed336d3ff"/>
 				<textFieldExpression><![CDATA[$P{shipping}.receives().address()]]></textFieldExpression>
 			</textField>
-
-
-
-
 			<staticText>
 				<reportElement x="197" y="195" width="198" height="19" uuid="cd2d7234-3966-42e9-9316-2cd89a7734c5">
 					<property name="local_mesure_unitheight" value="pixel"/>
@@ -259,16 +240,7 @@
 				<textElement/>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{name}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="270" y="0" width="20" height="15"/>
-				<textElement/>
-				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{total1} != null ? $F{total1} : "" ]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="290" y="0" width="200" height="15"/>
-				<textElement/>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{name1} != null ? $F{name1} : ""]]></textFieldExpression>
-			</textField>
+
 		</band>
 	</detail>
 
@@ -282,89 +254,36 @@
 				</reportElement>
 			</line>
 
+			<textField>
+				<reportElement x="10" y="0" width="55" height="15"  isPrintInFirstWholeBand="true" uuid="dd044c23-ac22-4908-b5a7-05d9e3c3f6a8"/>
+				<textFieldExpression><![CDATA[$P{shipping}.bags() != null ? $P{shipping}.bags() : "" ]]></textFieldExpression>
+			</textField>
+
 			<staticText>
-				<reportElement x="390" y="1" width="39" height="15" uuid="2f14db21-240f-4a26-a052-b4ee075e22cb"/>
+				<reportElement x="390" y="0" width="39" height="15" uuid="2f14db21-240f-4a26-a052-b4ee075e22cb"/>
 				<textElement>
 					<font  isBold="true"/>
 				</textElement>
 				<text><![CDATA[Peso: lb]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="430" y="1" width="55" height="15"  isPrintInFirstWholeBand="true" uuid="09015b5c-39fa-495f-8401-115883df9b29"/>
+				<reportElement x="430" y="0" width="55" height="15"  isPrintInFirstWholeBand="true" uuid="09315b5c-49fa-496f-8401-115983df9b29"/>
 				<textFieldExpression><![CDATA[$P{shipping}.weight()]]></textFieldExpression>
 			</textField>
 
 			<staticText>
-				<reportElement x="470" y="1" width="65" height="15" uuid="852856f1-87b9-4334-81e4-ee089207d9c8"/>
+				<reportElement x="470" y="0" width="65" height="15" uuid="852856f1-87b9-4334-81e4-ee089207d9c8"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[Valor Total: $]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="530" y="1" width="55" height="15" uuid="083e0f68-cbdd-48cc-9e4b-a091296c23a4"/>
+				<reportElement x="530" y="0" width="55" height="15" uuid="083e0f68-cbdd-48cc-9e4b-a091296c23a4"/>
 				<textFieldExpression><![CDATA[$P{shipping}.amount()]]></textFieldExpression>
 			</textField>
-
-
-
 		</band>
 	</columnFooter>
 
-<!--
-	<lastPageFooter>
-		<band height="65" splitType="Stretch">
 
-					<staticText>
-						<reportElement positionType="Float" mode="Opaque" x="0" y="140" width="100" height="17" backcolor="#E6E8E9" uuid="36aa233d-4305-48e6-974a-1bbf89bb3c8f"/>
-						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Serif" size="9" isItalic="true"/>
-						</textElement>
-						<text><![CDATA[THANKYOU FOR YOUR BUSINESS]]></text>
-					</staticText>
-
-
-
-
-
-
-					<staticText>
-						<reportElement x="403" y="50" width="39" height="15" uuid="2f14db21-240f-4a26-a052-b4ee075e22cb"/>
-						<textElement>
-							<font isBold="true"/>
-						</textElement>
-						<text><![CDATA[Peso: lb]]></text>
-					</staticText>
-					<textField>
-						<reportElement x="440" y="50" width="55" height="15" isPrintInFirstWholeBand="true" uuid="09015b5c-39fa-495f-8401-115883df9b29"/>
-						<textFieldExpression><![CDATA[$P{shipping}.weight()]]></textFieldExpression>
-					</textField>
-
-					<staticText>
-						<reportElement x="470" y="50" width="65" height="15" uuid="852856f1-87b9-4334-81e4-ee089207d9c8"/>
-						<textElement>
-							<font isBold="true"/>
-						</textElement>
-						<text><![CDATA[Valor Total: $]]></text>
-					</staticText>
-					<textField>
-						<reportElement x="530" y="50" width="55" height="15" uuid="083e0f68-cbdd-48cc-9e4b-a091296c23a4"/>
-						<textFieldExpression><![CDATA[$P{shipping}.amount()]]></textFieldExpression>
-					</textField>
-
-
-
-
-					<staticText>
-						<reportElement x="489" y="50" width="15" height="15" uuid="5b2d39a6-9d47-41c7-bcf2-20d655a4fdf2"/>
-						<textElement>
-							<font isBold="true"/>
-						</textElement>
-						<text><![CDATA[lb]]></text>
-					</staticText>
-
-
-		</band>
-	</lastPageFooter>
-	-->
 </jasperReport>
