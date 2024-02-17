@@ -5,6 +5,7 @@ import com.cubanfardo.cubanfardoreport.model.Shipping;
 import jakarta.servlet.http.HttpServletResponse;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
@@ -17,8 +18,9 @@ import java.util.stream.Collectors;
 public class JReportService {
 
     public void exportJasperReport(Shipping shipping, HttpServletResponse response) throws IOException, JRException {
+        ClassPathResource classPathResource = new ClassPathResource("classpath:report/invoice.jrxml");
 
-        File file = ResourceUtils.getFile("classpath:report/invoice.jrxml");
+        File file = ResourceUtils.getFile(classPathResource.getPath());
         JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
 
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(shipping.articles());
