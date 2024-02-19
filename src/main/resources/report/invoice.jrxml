@@ -256,7 +256,7 @@
 
 			<textField>
 				<reportElement x="10" y="0" width="55" height="15"  isPrintInFirstWholeBand="true" uuid="dd044c23-ac22-4908-b5a7-05d9e3c3f6a8"/>
-				<textFieldExpression><![CDATA[$P{shipping}.bags() != null ? $P{shipping}.bags() : "" ]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{shipping}.details() != null ? $P{shipping}.details() : "" ]]></textFieldExpression>
 			</textField>
 
 			<staticText>
