@@ -18,10 +18,9 @@ import java.util.stream.Collectors;
 public class JReportService {
 
     public void exportJasperReport(Shipping shipping, HttpServletResponse response) throws IOException, JRException {
-        ClassPathResource classPathResource = new ClassPathResource("classpath:report/invoice.jrxml");
+        ClassPathResource classPathResource = new ClassPathResource("report/invoice.jrxml");
 
-        File file = ResourceUtils.getFile(classPathResource.getPath());
-        JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
+        JasperReport jasperReport = JasperCompileManager.compileReport(classPathResource.getInputStream());
 
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(shipping.articles());
 
