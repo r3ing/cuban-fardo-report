@@ -26,11 +26,12 @@ jobs:
         distribution: 'temurin'
         cache: maven
         
-    - name: Build with Maven  
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
       env: 
         auth.username: ${{ secrets.AUTH_USERNAME }}
         auth.password: ${{ secrets.AUTH_PASSWORD }}
-      run: mvn -B package --file pom.xml
+      
     # run: mvn -B package -Dmaven.test.skip --file pom.xml
       
     - name: Execute Jar File
