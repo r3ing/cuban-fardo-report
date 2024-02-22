@@ -33,7 +33,7 @@ jobs:
     #  run: sudo kill -9 `sudo lsof -t -i:80` & sudo java -jar /home/ubuntu/actions-runner/_work/cuban-fardo-report/cuban-fardo-report/target/cuban-fardo-report-0.0.1-SNAPSHOT.jar &
 
     - name: Build Docker Image
-      run: docker build . --tag cuban-fardo-report
+      run: docker build -t cuban-fardo-report .
 
   deploy:
     needs: build
