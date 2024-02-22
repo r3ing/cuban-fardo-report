@@ -14,9 +14,7 @@ on:
 
 jobs:
   build:
-
     runs-on: self-hosted
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 17
@@ -26,16 +24,26 @@ jobs:
         distribution: 'temurin'
         cache: maven
         
-    - name: Build with Maven
-    #  run: mvn -B package --file pom.xml
-    #  env: 
-    #    auth.username: ${{ secrets.AUTH_USERNAME }}
-    #    auth.password: ${{ secrets.AUTH_PASSWORD }}
+    - name: Build Project with Maven
+      run: mvn clean install -DskipTests
+    #  run: mvn -B package --file pom.xml 
       
-      run: mvn -B package -Dmaven.test.skip --file pom.xml
       
-    - name: Execute Jar File
-      run: sudo kill -9 `sudo lsof -t -i:80` & sudo java -jar /home/ubuntu/actions-runner/_work/cuban-fardo-report/cuban-fardo-report/target/cuban-fardo-report-0.0.1-SNAPSHOT.jar &
+    #- name: Execute Jar File
+    #  run: sudo kill -9 `sudo lsof -t -i:80` & sudo java -jar /home/ubuntu/actions-runner/_work/cuban-fardo-report/cuban-fardo-report/target/cuban-fardo-report-0.0.1-SNAPSHOT.jar &
+
+    - name: Build Docker Image
+      run: docker build -t cubanfardo/cuban-fardo-report .
+
+  deploy:
+    needs: build
+    runs-on: [ip-172-31-12-134]
+    steps:
+      - name: Delete old cntainer
+        run: docker rm -f cuban-fardo-report-container
+      - name: Run Docker container
+        run: docker run -d -p 8080:8080 --name cuban-fardo-report-container cubanfardo/cuban-fardo-report
+     
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     #- name: Update dependency graph
