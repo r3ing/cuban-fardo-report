@@ -33,7 +33,7 @@ jobs:
     #  run: sudo kill -9 `sudo lsof -t -i:80` & sudo java -jar /home/ubuntu/actions-runner/_work/cuban-fardo-report/cuban-fardo-report/target/cuban-fardo-report-0.0.1-SNAPSHOT.jar &
 
     - name: Build Docker Image
-      run: docker build -t cubanfardo/cuban-fardo-report .
+      run: docker build . --tag cuban-fardo-report
 
   deploy:
     needs: build
@@ -42,7 +42,7 @@ jobs:
       - name: Delete old cntainer
         run: docker rm -f cuban-fardo-report-container
       - name: Run Docker container
-        run: docker run -d -p 8080:8080 --name cuban-fardo-report-container cubanfardo/cuban-fardo-report
+        run: docker run -d -p 8080:8080 --name cuban-fardo-report-container cuban-fardo-report:latest
      
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
