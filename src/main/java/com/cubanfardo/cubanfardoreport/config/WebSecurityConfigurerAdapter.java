@@ -35,7 +35,7 @@ public class WebSecurityConfigurerAdapter {
                 .authorizeHttpRequests((authorize) -> {
                     authorize
                             .requestMatchers("/api/**").authenticated()
-                            .requestMatchers("/actuator/**").permitAll();
+                            .anyRequest().permitAll();
                 }).httpBasic(Customizer.withDefaults())
                 .build();
     }
