@@ -34,7 +34,7 @@ public class WebSecurityConfigurerAdapter {
         return http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests((authorize) -> {
                     authorize
-                            //.requestMatchers("/api/**").authenticated()
+                            .requestMatchers("/api/**").authenticated()
                             .anyRequest().permitAll();
                 }).httpBasic(Customizer.withDefaults())
                 .build();
