@@ -3,6 +3,7 @@ package com.cubanfardo.cubanfardoreport.controller;
 import com.cubanfardo.cubanfardoreport.model.Shipping;
 import com.cubanfardo.cubanfardoreport.service.JReportService;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.Valid;
 import net.sf.jasperreports.engine.JRException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +28,7 @@ public class ReportController {
     }
 
     @PostMapping("/export/pdf")
-    public void createPdf(@RequestBody Shipping shipping, HttpServletResponse response) throws JRException, IOException {
+    public void createPdf(@Valid @RequestBody Shipping shipping, HttpServletResponse response) throws JRException, IOException {
         String fileName = shipping.tracking() + "-" + shipping.province() + ".pdf";
 
         response.setContentType("application/pdf");

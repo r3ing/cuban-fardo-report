@@ -90,8 +90,8 @@
 	<title>
 		<band height="216" splitType="Stretch">
 			<image hAlign="Center">
-				<reportElement x="0" y="0" width="80" height="70" uuid="94883631-a913-43e2-b182-ab8d77d0181e"/>
-				<imageExpression><![CDATA["report/logo.png"]]></imageExpression>
+				<reportElement x="7" y="0" width="80" height="70" uuid="94883631-a913-43e2-b182-ab8d77d0181e"/>
+				<imageExpression><![CDATA["report/logo-report.jpg"]]></imageExpression>
 			</image>
 
 			<staticText>

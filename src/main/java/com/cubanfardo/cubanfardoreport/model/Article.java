@@ -1,11 +1,15 @@
 package com.cubanfardo.cubanfardoreport.model;
 
-public class Article {
-    private Integer total;
-    private String name;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PositiveOrZero;
 
-    private Integer total1;
-    private String name1;
+public class Article {
+    @PositiveOrZero(message = "Total is positive value")
+    @NotNull(message = "Total is mandatory")
+    private Integer total;
+    @NotBlank(message = "Name is mandatory")
+    private String name;
 
     public Article(Integer total1, String name1) {
     }
@@ -26,19 +30,4 @@ public class Article {
         this.name = name;
     }
 
-    public Integer getTotal1() {
-        return total1;
-    }
-
-    public void setTotal1(Integer total1) {
-        this.total1 = total1;
-    }
-
-    public String getName1() {
-        return name1;
-    }
-
-    public void setName1(String name1) {
-        this.name1 = name1;
-    }
 }
