@@ -5,29 +5,32 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 
 public class Article {
-    @PositiveOrZero(message = "Total is positive value")
-    @NotNull(message = "Total is mandatory")
-    private Integer total;
-    @NotBlank(message = "Name is mandatory")
-    private String name;
+    @PositiveOrZero(message = "Quantity is positive value")
+    @NotNull(message = "Quantity is mandatory")
+    private Integer quantity;
+    @NotBlank(message = "Product is mandatory")
+    private String product;
 
-    public Article(Integer total1, String name1) {
+    public Article(Integer quantity, String product) {
+        this.quantity = quantity;
+        this.product = product;
     }
 
-    public Integer getTotal() {
-        return total;
+    public Integer getQuantity() {
+        return quantity;
     }
 
-    public void setTotal(Integer total) {
-        this.total = total;
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
-    public String getName() {
-        return name;
+    public String getProduct() {
+        return product;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setProduct(String product) {
+        this.product = product;
     }
+
 
 }

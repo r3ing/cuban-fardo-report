@@ -1,18 +1,15 @@
 package com.cubanfardo.cubanfardoreport.service;
 
-import com.cubanfardo.cubanfardoreport.model.Article;
 import com.cubanfardo.cubanfardoreport.model.Shipping;
 import jakarta.servlet.http.HttpServletResponse;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ResourceUtils;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.HashMap;
+import java.util.Map;
 
 @Service
 public class JReportService {
