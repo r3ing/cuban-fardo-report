@@ -38,7 +38,7 @@ class JReportServiceTest {
 
 
         Shipping shipping = new Shipping("W1234"
-                , "Las Tunas", 50, 10.5
+                , "Las Tunas", 50.0, 10.5
                 , "3 bags", null, null, Collections.emptyList());
 
 
