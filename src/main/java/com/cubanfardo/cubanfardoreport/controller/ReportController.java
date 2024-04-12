@@ -27,7 +27,7 @@ public class ReportController {
         this.jReportService = jReportService;
     }
 
-    @PostMapping("/export/pdf")
+    @PostMapping("/pdf")
     public void createPdf(@Valid @RequestBody Shipping shipping, HttpServletResponse response) throws JRException, IOException {
         String fileName = shipping.tracking() + "-" + shipping.province() + ".pdf";
 
