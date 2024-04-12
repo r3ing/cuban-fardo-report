@@ -255,26 +255,26 @@
 				</reportElement>
 			</line>
 			<textField>
-				<reportElement x="10" y="0" width="55" height="15"  isPrintInFirstWholeBand="true" uuid="dd044c23-ac22-4908-b5a7-05d9e3c3f6a8"/>
+				<reportElement x="5" y="0" width="350" height="15"  isPrintInFirstWholeBand="true" uuid="dd044c23-ac22-4908-b5a7-05d9e3c3f6a8"/>
 				<textFieldExpression><![CDATA[$P{shipping}.details() != null ? $P{shipping}.details() : "" ]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="390" y="0" width="39" height="15" uuid="2f14db21-240f-4a26-a052-b4ee075e22cb"/>
+				<reportElement x="423" y="0" width="40" height="15" uuid="2f14db21-240f-4a26-a052-b4ee075e22cb"/>
 				<textElement>
 					<font  isBold="true"/>
 				</textElement>
 				<text><![CDATA[Peso: lb]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="430" y="0" width="55" height="15"  isPrintInFirstWholeBand="true" uuid="09315b5c-49fa-496f-8401-115983df9b29"/>
+				<reportElement x="460" y="0" width="55" height="15"  isPrintInFirstWholeBand="true" uuid="09315b5c-49fa-496f-8401-115983df9b29"/>
 				<textFieldExpression><![CDATA[$P{shipping}.weight()]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="470" y="0" width="65" height="15" uuid="852856f1-87b9-4334-81e4-ee089207d9c8"/>
+				<reportElement x="496" y="0" width="40" height="15" uuid="852856f1-87b9-4334-81e4-ee089207d9c8"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[Valor Total: $]]></text>
+				<text><![CDATA[Total: $]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="530" y="0" width="55" height="15" uuid="083e0f68-cbdd-48cc-9e4b-a091296c23a4"/>
