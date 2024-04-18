@@ -67,12 +67,13 @@
 			</textField>
 
 			<line>
-				<reportElement x="0" y="80" width="560" height="1" uuid="806ce5df-1219-4876-ae0c-ca7405b1f246">
+				<reportElement x="8" y="80" width="560" height="1" uuid="806ce5df-1219-4876-ae0c-ca7405b1f246">
 					<property name="local_mesure_unitheight" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 			</line>
 
+			<!--SENDER-->
 			<staticText>
 				<reportElement x="17" y="90" width="84" height="25" uuid="57aed2b1-4f4e-40a3-a6ad-54dae8dd4c5a">
 					<property name="local_mesure_unitheight" value="pixel"/>
@@ -92,14 +93,26 @@
 				<text><![CDATA[NOMBRE:]]></text>
 			</staticText>
 
+			<textField>
+				<reportElement x="67" y="110" width="197" height="15" isPrintInFirstWholeBand="true" uuid="544e258c-e6f1-463c-a52d-937e6c6bc412"/>
+				<textFieldExpression><![CDATA[$P{shipping}.sender().name()]]></textFieldExpression>
+			</textField>
+
 			<staticText>
-				<reportElement x="30" y="130" width="50" height="15" uuid="1d3045ed-03d6-4253-a959-aeeb491b73ca"/>
+				<reportElement x="30" y="125" width="50" height="15" uuid="1d3045ed-03d6-4253-a959-aeeb491b73ca"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[TELEF:]]></text>
 			</staticText>
 
+			<textField>
+				<reportElement x="67" y="125" width="197" height="15" uuid="41d2ae4f-e25a-443b-9626-5d312ebfd6d2"/>
+				<textFieldExpression><![CDATA[$P{shipping}.sender().phone()]]></textFieldExpression>
+			</textField>
+
+
+			<!--RECEIVES-->
 			<staticText>
 				<reportElement x="300" y="90" width="84" height="16" uuid="139ebe8d-25b0-411e-986c-270015400874">
 					<property name="local_mesure_unitheight" value="pixel"/>
@@ -112,48 +125,41 @@
 			</staticText>
 
 			<staticText>
-				<reportElement x="300" y="109" width="50" height="15" uuid="edbd74ac-0cbd-44c9-8a8e-ccf745191172"/>
+				<reportElement x="300" y="109" width="60" height="15" uuid="edbd74ac-0cbd-44c9-8a8e-ccf745191172"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[NOMBRE:]]></text>
 			</staticText>
 
+			<textField>
+				<reportElement x="353" y="109" width="205" height="15" uuid="9701345a-86fc-48c5-b4b9-2b259a44d918"/>
+				<textFieldExpression><![CDATA[$P{shipping}.receives().name()]]></textFieldExpression>
+			</textField>
+
 			<staticText>
-				<reportElement x="313" y="130" width="40" height="15" uuid="2d2f365d-7b12-4a8f-990d-ff528a2660bc"/>
+				<reportElement x="313" y="125" width="40" height="15" uuid="2d2f365d-7b12-4a8f-990d-ff528a2660bc"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[TELEF:]]></text>
 			</staticText>
 
+			<textField>
+				<reportElement x="353" y="125" width="205" height="15" uuid="445ee377-9c9a-4e31-88ca-b46403dd08d4"/>
+				<textFieldExpression><![CDATA[$P{shipping}.receives().phone()]]></textFieldExpression>
+			</textField>
+
 			<staticText>
-				<reportElement x="300" y="149" width="60" height="15" uuid="b62092ec-9053-4f27-b387-9b25d2909a68"/>
+				<reportElement x="300" y="143" width="60" height="15" uuid="b62092ec-9053-4f27-b387-9b25d2909a68"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[DIRECCN:]]></text>
 			</staticText>
 
-			<textField>
-				<reportElement x="67" y="109" width="197" height="15" isPrintInFirstWholeBand="true" uuid="544e258c-e6f1-463c-a52d-937e6c6bc412"/>
-				<textFieldExpression><![CDATA[$P{shipping}.sender().name()]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="67" y="130" width="197" height="15" uuid="41d2ae4f-e25a-443b-9626-5d312ebfd6d2"/>
-				<textFieldExpression><![CDATA[$P{shipping}.sender().phone()]]></textFieldExpression>
-			</textField>
-
-			<textField>
-				<reportElement x="353" y="109" width="204" height="15" uuid="9701345a-86fc-48c5-b4b9-2b259a44d918"/>
-				<textFieldExpression><![CDATA[$P{shipping}.receives().name()]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="353" y="130" width="204" height="16" uuid="445ee377-9c9a-4e31-88ca-b46403dd08d4"/>
-				<textFieldExpression><![CDATA[$P{shipping}.receives().phone()]]></textFieldExpression>
-			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement x="353" y="149" width="203" height="66" uuid="d51f4a2a-b442-48a9-a155-2e0ed336d3ff"/>
+				<reportElement x="353" y="143" width="205" height="67" uuid="d51f4a2a-b442-48a9-a155-2e0ed336d3ff"/>
 				<textFieldExpression><![CDATA[$P{shipping}.receives().address()]]></textFieldExpression>
 			</textField>
 
@@ -163,7 +169,7 @@
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[DESCRIPCION PRODUCTOS]]></text>
 			</staticText>
@@ -191,7 +197,7 @@
 	<columnFooter>
 		<band height="16">
 			<line>
-				<reportElement x="0" y="0" width="560" height="1" uuid="806ce5df-1219-4876-ae0c-ca7405b1f246">
+				<reportElement x="420" y="0" width="150" height="1" uuid="806ce5df-1219-4876-ae0c-ca7405b1f246">
 					<property name="local_mesure_unitheight" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
