@@ -1,7 +1,6 @@
 package com.cubanfardo.cubanfardoreport.service;
 
-import com.cubanfardo.cubanfardoreport.model.Article;
-import com.cubanfardo.cubanfardoreport.model.Shipping;
+import com.cubanfardo.cubanfardoreport.model.*;
 import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.http.HttpServletResponse;
 import net.sf.jasperreports.engine.JRException;
@@ -16,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -38,8 +38,11 @@ class JReportServiceTest {
 
 
         Shipping shipping = new Shipping("W1234"
-                , "Las Tunas", 50.0, 10.5
-                , "3 bags", null, null, Collections.emptyList());
+                , "Las Tunas", 50.0, 10.5, "3 bags"
+                , new Sender("anyString", "anyString")
+                , new Receives("anyString", "anyString", "anyString")
+                , new Office("anyString", "anyString", "anyString")
+                , articles);
 
 
         ServletOutputStream servletOut = mock(ServletOutputStream.class);

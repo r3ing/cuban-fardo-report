@@ -12,5 +12,6 @@ public record Shipping(@NotBlank(message = "Tracking is mandatory") String track
                        Double weight, String details,
                        @NotNull(message = "Sender is mandatory") Sender sender,
                        @NotNull(message = "Receives is mandatory") Receives receives,
+                       @NotNull(message = "Office is mandatory") Office office,
                        @NotEmpty(message = "Articles is mandatory") List<Article> articles) {
 }
